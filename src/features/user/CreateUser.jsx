@@ -32,11 +32,13 @@ export default function CreateUser() {
         className="input mb-8 w-72"
       />
 
-      <div>
-        <Button type="primary" size="md">
-          Start Ordering
-        </Button>
-      </div>
+      {username !== '' && (
+        <div>
+          <Button type="primary" size="md">
+            Start Ordering
+          </Button>
+        </div>
+      )}
     </form>
   )
 }
