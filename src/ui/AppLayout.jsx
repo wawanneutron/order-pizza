@@ -1,8 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
 import CartOverview from '../features/cart/CartOverview'
+import { useSelector } from 'react-redux'
+import { getCarts } from '../features/cart/cartSlice'
 
 function AppLayout() {
+  const carts = useSelector(getCarts)
+
   return (
     <div className="h-screen bg-gray-800 grid grid-rows-[auto_1fr_auto]">
       <Header />
@@ -13,7 +17,7 @@ function AppLayout() {
         </main>
       </div>
 
-      <CartOverview />
+      {carts.length && <CartOverview />}
     </div>
   )
 }

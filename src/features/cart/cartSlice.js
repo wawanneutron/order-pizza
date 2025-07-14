@@ -38,6 +38,10 @@ const cartSlice = createSlice({
         if (item.quantity === 0)
           cartSlice.caseReducers.deleteItem(state, action)
       }
+    },
+
+    clearCarts(state) {
+      state.carts = []
     }
   }
 })
@@ -45,11 +49,14 @@ const cartSlice = createSlice({
 export const {
   addItem,
   deleteItem,
+  clearCarts,
   increaseItemQuantity,
   decreaseItemQuantity
 } = cartSlice.actions
 
 export default cartSlice.reducer
+
+export const getCarts = (state) => state.cart.carts
 
 export const getTotalCartPrice = (state) =>
   state.cart.carts.reduce((sum, item) => sum + item.totalPrice, 0)
