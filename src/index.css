@@ -6,7 +6,7 @@ html {
 
 .input {
   @apply rounded-full border border-amber-600 px-4 py-2 text-sm transition-all duration-300 placeholder:text-amber-400 focus:outline-none focus:ring focus:ring-amber-300 md:px-6 md:py-3
-  focus:text-amber-600;
+  focus:text-amber-600 disabled:cursor-not-allowed disabled:bg-gray-600;
 }
 
 .loader {
