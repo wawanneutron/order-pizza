@@ -31,7 +31,7 @@ export default function Carts() {
       </ul>
 
       <div className="mt-6 space-x-3">
-        <Button to="/order/new" type="primary" size="md">
+        <Button to="/order" type="primary" size="md">
           Order Pizzas
         </Button>
 
