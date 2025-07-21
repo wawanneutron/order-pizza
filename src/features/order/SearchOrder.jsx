@@ -1,12 +1,16 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function SearchOrder() {
   const [search, setSearch] = useState('')
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault()
 
-    console.log('log search:', search)
+    if (!search) return
+
+    navigate(`/order/${search}`)
   }
 
   return (
