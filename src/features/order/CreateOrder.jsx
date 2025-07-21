@@ -39,8 +39,7 @@ export default function CreateOrder() {
   return (
     <div>
       <h2 className="text-amber-600 text-2xl font-semibold mb-8">
-        Ready to order? Let&apos;s go! - {addressStatus} -{' '}
-        {String(isLoadingAddress)}
+        Ready to order? Let&apos;s go!
       </h2>
 
       <Form method="POST">
