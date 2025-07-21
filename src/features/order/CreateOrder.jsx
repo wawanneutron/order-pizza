@@ -172,5 +172,5 @@ export async function Action({ request }) {
   store.dispatch(clearCarts())
 
   // redirect page
-  return redirect(`order/${newOrder.id}`)
+  return redirect(`/order/${newOrder.id}`)
 }

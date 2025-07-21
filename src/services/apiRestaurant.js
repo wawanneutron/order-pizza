@@ -27,3 +27,28 @@ export async function createOrder(newOrder) {
     throw Error('Failed to creating your order')
   }
 }
+
+export async function updateOrder(id, updateObj) {
+  try {
+    const res = await fetch(`${API_URL}/order/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(updateObj),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+    if (!res.ok) throw Error()
+    // We don't need the data, so we don't return anything
+  } catch (err) {
+    throw Error('Failed updating your order')
+  }
+}
+
+export async function getOrder(orderId) {
+  const res = await fetch(`${API_URL}/order/${orderId}`)
+  if (!res.ok) throw Error(`Could't find order ${orderId}`)
+
+  const { data } = await res.json()
+  return data
+}
